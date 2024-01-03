@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Сиб_язва_okrug_2013-2022</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />"
+  <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU"
+    type="text/javascript"></script>
+  <script src="http://yandex.st/jquery/2.2.3/jquery.min.js"
+    type="text/javascript"></script>
+    <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+  <div id="map"></div>
+</body>
+</html>
+
+<script>
+ymaps.ready(init);
+var myMap;
+
+function init () {
+myMap = new ymaps.Map("map", {
+  center: [48.29453175009871,69.20724893761523]
+, zoom: 5
+}, {
+  searchControlProvider: 'yandex#search'
+});
+//====================================================================
+ymaps.borders.load('KZ', {
+  lang: 'ru',
+  quality: 1
+}).then(function (geojson) {
+  var regions = ymaps.geoQuery(geojson);
+  regions.setOptions('fillColor', '#FFFFFF');
+  regions.setOptions('fillOpacity', 0.5);
+  regions.addToMap(myMap);
+//====================================================================
+
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 48.05376, 80.56308
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Абайская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Аягозский район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Майлинский сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>60000</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2021 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>МРС</i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>60000</i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 49.328083, 81.5708000
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Абайская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Жарминский район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Калбатауский сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>1020</i></b></div></td>'
+,'               <td><div align=center><b><i>450</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2016 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>1020</i></b></div></td>'
+,'               <td><div align=center><b><i>450</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>КРС</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>220</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>МРС</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>800</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 51.0046722, 72.2727000
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Акмолинская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Аршалынский район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Михайловский (Аршалынский р-он) сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>615</i></b></div></td>'
+,'               <td><div align=center><b><i>8000</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2019 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>КРС</i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>615</i></b></div></td>'
+,'               <td><div align=center><b><i>8000</i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 50.46944, 61.21944
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Актюбинская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Айтекебийский район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Кумкудукский сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>6</i></b></div></td>'
+,'               <td><div align=center><b><i>6</i></b></div></td>'
+,'               <td><div align=center><b><i>3200</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2019 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>КРС</i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>6</i></b></div></td>'
+,'               <td><div align=center><b><i>6</i></b></div></td>'
+,'               <td><div align=center><b><i>3200</i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 50.2320056, 57.9862694
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Актюбинская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Хромтауский район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Акжарский (Хромтауский р-он) сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>7</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>20100</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2021 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>КРС</i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>7</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>20100</i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 49.3026361, 84.7474417
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Восточно - Казахстанская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Катон-Карагайский район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Солоновский сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>1007</i></b></div></td>'
+,'               <td><div align=center><b><i>3000</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2018 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>КРС</i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>1007</i></b></div></td>'
+,'               <td><div align=center><b><i>3000</i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 42.84667, 71.40806
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Жамбылская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Жамбылский (Жамбылская обл.) район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Караойский (Жамбылский р-он) сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>1500</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2022 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Лошади</i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>1500</i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 42.632000, 70.6849972
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Жамбылская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Жуалинский район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Карасазский (Жуалинский р-он) сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>32</i></b></div></td>'
+,'               <td><div align=center><b><i>500</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2018 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>32</i></b></div></td>'
+,'               <td><div align=center><b><i>500</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>КРС</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>17</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>Лошади</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>5</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>МРС</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>10</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 43.442326, 69.627907
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Жамбылская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Сарысуский район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Туркестанский сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>3</i></b></div></td>'
+,'               <td><div align=center><b><i>3746</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2014 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>3</i></b></div></td>'
+,'               <td><div align=center><b><i>3746</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>КРС</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>218</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>Лошади</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i>3</i></b></div></td>'
+,'               <td><div align=center><b><i>152</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>МРС</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>3376</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 43.012555, 70.58007
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Жамбылская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Таласский район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Бериккайнарский сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>4133</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2015 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>4133</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>КРС</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>64</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>Лошади</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>69</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>МРС</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>4000</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 43.18825, 70.238296
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Жамбылская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Таласский район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Каратауский (Таласский р-он) сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>590</i></b></div></td>'
+,'               <td><div align=center><b><i>5000</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2022 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Лошади</i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>590</i></b></div></td>'
+,'               <td><div align=center><b><i>5000</i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 49.590806, 48.357750
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Западно - Казахстанская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Казталовский район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Теренкольский (Казталовский р-он) сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>9850</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2016 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>КРС</i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>9850</i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 48.42917, 74.82056
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Карагандинская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Актогайский (Карагандинская обл.) район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Жидебайский сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>4403</i></b></div></td>'
+,'               <td><div align=center><b><i>6480</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2016 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>4403</i></b></div></td>'
+,'               <td><div align=center><b><i>6480</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>КРС</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>1280</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>Лошади</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>547</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>МРС</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>2576</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 48.67028, 72.70861
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Карагандинская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Шетский район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Успенский (Шетский р-он) сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>3000</i></b></div></td>'
+,'               <td><div align=center><b><i>51380</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2016 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>3000</i></b></div></td>'
+,'               <td><div align=center><b><i>51380</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>КРС</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>1831</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>Лошади</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>900</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>МРС</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>269</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 52.831606, 61.823706
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Костанайская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Денисовский район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Архангельский (Денисовский р-он) сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>60000</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2021 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>КРС</i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>60000</i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 52.9229194, 61.5480639
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Костанайская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Денисовский район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Свердловский (Денисовский р-он) сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>35</i></b></div></td>'
+,'               <td><div align=center><b><i>1037</i></b></div></td>'
+,'               <td><div align=center><b><i>136667</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2021 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>35</i></b></div></td>'
+,'               <td><div align=center><b><i>1037</i></b></div></td>'
+,'               <td><div align=center><b><i>136667</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>КРС</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i>22</i></b></div></td>'
+,'               <td><div align=center><b><i>644</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>Лошади</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i>13</i></b></div></td>'
+,'               <td><div align=center><b><i>393</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 53.8214694, 62.6178306
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Костанайская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Федоровский район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Костряковский сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>2</i></b></div></td>'
+,'               <td><div align=center><b><i>780</i></b></div></td>'
+,'               <td><div align=center><b><i>28560</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2022 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>КРС</i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>2</i></b></div></td>'
+,'               <td><div align=center><b><i>780</i></b></div></td>'
+,'               <td><div align=center><b><i>28560</i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 53.306775, 74.688306
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Павлодарская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Иртышский район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Узунсуский сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>2725</i></b></div></td>'
+,'               <td><div align=center><b><i>3000</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2016 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>2725</i></b></div></td>'
+,'               <td><div align=center><b><i>3000</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>КРС</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>874</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>Лошади</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>354</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>МРС</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>1316</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>Свиньи</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>181</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 54.188557, 71.781321
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Северо - Казахстанская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Акжарский район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Улкен-Караойский (Акжарский р-он) сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>5</i></b></div></td>'
+,'               <td><div align=center><b><i>1699</i></b></div></td>'
+,'               <td><div align=center><b><i>880000</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2021 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i>5</i></b></div></td>'
+,'               <td><div align=center><b><i>1699</i></b></div></td>'
+,'               <td><div align=center><b><i>880000</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>КРС</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i>5</i></b></div></td>'
+,'               <td><div align=center><b><i>1677</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>Лошади</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>15</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>Собаки</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>7</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 41.368564, 68.843665
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Туркестанская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Келесский район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Ошактинский сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>9741</i></b></div></td>'
+,'               <td><div align=center><b><i>9420</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2022 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>КРС</i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>9741</i></b></div></td>'
+,'               <td><div align=center><b><i>9420</i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+myPlacemark = new ymaps.Placemark([
+ 42.1690889, 69.8506611
+], {
+hintContent: ""
+, balloonContentBody: [
+,'<style type="text/css">'
+,'    table {border-collapse: collapse;}'
+,'    table.brd td {border: 1px solid #000;}'
+,'</style>'
+,'<table class="brd">'
+,'    <tr bgcolor="Aquamarine"><td colspan="2"><b>болезнь</b></td><td colspan="3"><div align=center><b><i>Сиб_язва</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Туркестанская область</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Толебийский район</i></b></div></td></tr>'
+,'    <tr bgcolor="LemonChiffon"><td colspan="5"><div align=center><b><i>Киелитасский сельский округ</i></b></div></td></tr>'
+,'    <tr><td colspan="5"><div align=center><b><i></i></b></div></td></tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>Вид животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Кол-во очагов</i></b></div></td>'
+,'               <td><div align=center><b><i>Пало животных</i></b></div></td>'
+,'               <td><div align=center><b><i>Вакци- нировано</i></b></div></td>'
+,'               <td><div align=center><b><i>Дизенфицировано площадей (кв.м.)</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFD700><td colspan="5"><div align=center><b>Период: 2013-2022гг.</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>622</i></b></div></td>'
+,'               <td><div align=center><b><i>13600</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#FFFF00><td colspan="5"><div align=center><b>2021 год</b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor=#00FFFF>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'               <td><div align=center><b><i>1</i></b></div></td>'
+,'               <td><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>622</i></b></div></td>'
+,'               <td><div align=center><b><i>13600</i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>КРС</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>104</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>Лошади</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>109</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'    <tr bgcolor="LemonChiffon">'
+,'               <td><div align=center><b><i>МРС</i></b></div></td>'
+,'               <td><div align=center><b><i> </i></b></div></td>'
+,'               <td rowspan="1"><div align=center><b><i></i></b></div></td>'
+,'               <td><div align=center><b><i>409</i></b></div></td>'
+,'               <td><div align=center><b><i>  </i></b></div></td>'
+,'    </tr>'
+,'</table>'
+].join('')
+        }, {
+   iconLayout:    'default#image'
+,  iconImageHref: 'pointred.png'
+,  iconImageSize: [16, 16]
+,  iconImageOffset: [0, 0]
+        });
+myMap.geoObjects.add(myPlacemark);
+//=========================================
+
+
+
+ });
+
+}
+</script>
